@@ -1,4 +1,4 @@
-[Maze](https://maze.design)'s Serverless Starter Kit adds a light layer on top of the Serverless framework, giving you the latest in modern JavaScript (ES6 via Webpack + Babel, TypeScript if you want it, testing with Jest, linting with ESLint, and formatting with Prettier), the ease and power of Serverless, and a few handy helpers (like functions for handling warm functions and response helpers).
+[Maze](https://maze.design)'s Serverless Starter Kit adds a light layer on top of the Serverless framework, giving you the latest in modern JavaScript (ES6 via Webpack + Babel if you want it, testing with Jest, linting with ESLint, and formatting with Prettier), the ease and power of Serverless, and a few handy helpers (like functions for handling warm functions and response helpers).
 
 Once installed, you can create and deploy functions with the latest ES6 features in minutes, with linting and formatting baked in.
 
@@ -128,5 +128,9 @@ After you've deployed, the output of the deploy script will give you the API end
 for your deployed function(s), so you should be able to test the deployed API via that URL.
 
 ---
+
+## Credits
+
+This starter is greatly inspired by [postlight's starter](https://github.com/postlight/serverless-babel-starter)
 
 Happy coding!
