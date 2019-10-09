@@ -11,6 +11,9 @@ package:
   individually: true
 
 custom:
+  prune:
+    automatic: true
+    number: 3
   webpack:
     webpackConfig: ./webpack.config.js
     includeModules: true
@@ -49,3 +52,4 @@ plugins:
   - serverless-dotenv-plugin
   - serverless-step-functions
   - serverless-pseudo-parameters
+  - serverless-prune-plugin
