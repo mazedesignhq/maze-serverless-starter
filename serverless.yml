@@ -2,6 +2,7 @@ service: order-testers
 
 provider:
   name: aws
+  tracing: true
   runtime: nodejs10.x
   environment:
     NODE_CONFIG_DIR: ./node_modules/@mazeapp/maze-api-core/config
