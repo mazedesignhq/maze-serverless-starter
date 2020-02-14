@@ -7,6 +7,14 @@ provider:
   environment:
     NODE_CONFIG_DIR: ./node_modules/@mazeapp/maze-api-core/config
     NODE_ENV: ${opt:stage, 'development'}
+    AWS_XRAY_CONTEXT_MISSING: 'LOG_ERROR'
+  iamRoleStatements:
+    - Effect: 'Allow' # xray permissions (required)
+      Action:
+        - 'xray:PutTraceSegments'
+        - 'xray:PutTelemetryRecords'
+      Resource:
+        - '*'
 
 package:
   individually: true
@@ -54,3 +62,4 @@ plugins:
   - serverless-step-functions
   - serverless-pseudo-parameters
   - serverless-prune-plugin
+  - serverless-plugin-tracing

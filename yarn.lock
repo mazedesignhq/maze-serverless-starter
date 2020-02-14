@@ -8772,6 +8772,11 @@ serverless-offline@^5.10.1:
     update-notifier "^3.0.1"
     velocityjs "^1.1.4"
 
+serverless-plugin-tracing@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/serverless-plugin-tracing/-/serverless-plugin-tracing-2.0.0.tgz#df6b8b3166ac9bb70a37c7fc875014b2369158f6"
+  integrity sha1-32uLMWasm7cKN8f8h1AUsjaRWPY=
+
 serverless-plugin-warmup@^4.7.0-rc.1:
   version "4.7.0-rc.1"
   resolved "https://registry.npmjs.org/serverless-plugin-warmup/-/serverless-plugin-warmup-4.7.0-rc.1.tgz#92682b56605118fd41dda2b8b881ca2f44ab6dcd"
