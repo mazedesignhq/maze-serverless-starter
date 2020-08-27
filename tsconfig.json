@@ -14,7 +14,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "baseUrl": "./src",
-    "outDir": "./build",
+    "outDir": "./.build",
     "sourceMap": true,
     "typeRoots": [
       "./@types",

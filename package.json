@@ -4,17 +4,17 @@
   "main": "src/handlers.js",
   "license": "UNLICENCED",
   "scripts": {
-    "deploy:env": "sls deploy --stage $NODE_ENV",
+    "deploy:env": "serverless deploy --stage $NODE_ENV",
     "deploy": "export NODE_ENV=development && yarn deploy:env",
     "deploy:production": "export NODE_ENV=production && yarn deploy:env",
     "deploy:stage": "export NODE_ENV=stage && yarn deploy:env",
+    "invoke": "serverless invoke local --function helloWorld",
     "lint": "eslint src --ext .ts --fix",
     "precommit": "lint-staged",
     "serve": "serverless offline start",
     "serve:watch": "nodemon -e js,jsx,ts,tsx -x serverless offline start",
     "test": "NODE_CONFIG_DIR=./node_modules/@mazeapp/maze-api-core/config  jest",
     "test:watch": "NODE_CONFIG_DIR=./node_modules/@mazeapp/maze-api-core/config  jest --watch",
-    "build": "serverless webpack",
     "tail:hello": "serverless logs --function helloWorld --tail",
     "watch:hello": "SLS_DEBUG=* NODE_CONFIG_DIR=./node_modules/@mazeapp/maze-api-core/config serverless invoke local --env NODE_CONFIG_DIR=./node_modules/@mazeapp/maze-api-core/config --watch --function helloWorld --path fixtures/event.json"
   },
@@ -44,16 +44,14 @@
     "serverless-dotenv-plugin": "^2.1.1",
     "serverless-offline": "^5.10.1",
     "serverless-plugin-tracing": "^2.0.0",
+    "serverless-plugin-typescript": "^1.1.9",
     "serverless-plugin-warmup": "^4.7.0-rc.1",
     "serverless-prune-plugin": "^1.4.1",
     "serverless-pseudo-parameters": "^2.4.0",
     "serverless-step-functions": "^2.6.0",
-    "serverless-webpack": "^5.3.1",
     "ts-node": "^9.0.0",
     "ts-node-dev": "^1.0.0-pre.61",
-    "tsconfig-paths": "^3.9.0",
-    "webpack": "^4.39.3",
-    "webpack-node-externals": "^1.7.2"
+    "tsconfig-paths": "^3.9.0"
   },
   "dependencies": {
     "@mazeapp/maze-api-core": "^0.1.69",
