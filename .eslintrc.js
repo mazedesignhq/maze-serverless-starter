@@ -1,11 +1,16 @@
 module.exports = {
-  extends: ['airbnb', 'prettier'],
-  plugins: ['react', 'eslint-plugin-prettier', 'import'],
   env: {
-    browser: true,
-    node: true,
-    mocha: true,
+    browser: false,
+    jest: true,
+    es2020: true,
   },
+  extends: ['airbnb-base', 'plugin:prettier/recommended'],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 11,
+    sourceType: 'module',
+  },
+  plugins: ['@typescript-eslint'],
   rules: {
     'no-lonely-if': 0,
     'react/no-multi-comp': 0,
@@ -16,47 +21,29 @@ module.exports = {
     'import/namespace': 0,
     'import/no-unresolved': 0,
     'import/no-named-as-default': 2,
-    indent: [2, 2, { SwitchCase: 1 }],
     'no-console': 0,
     'arrow-parens': 0,
     'no-alert': 0,
-    'max-len': [
+    'max-len': 0,
+    'prefer-promise-reject-errors': 0,
+    'import/no-cycle': 0,
+    'import/extensions': [
       'error',
       {
-        code: 120,
+        js: 'never',
+        ts: 'never',
       },
     ],
-    'prettier/prettier': [
+    camelcase: 'off',
+    '@typescript-eslint/naming-convention': [
       'error',
-      {
-        trailingComma: 'all',
-        singleQuote: true,
-        bracketSpacing: true,
-        printWidth: 120,
-        semi: true,
-      },
+      { selector: 'variableLike', format: ['camelCase', 'UPPER_CASE', 'PascalCase'], leadingUnderscore: 'allow' },
     ],
-  },
-  settings: {
-    'import/parser': 'babel-eslint',
-    'import/resolver': {
-      node: {
-        paths: ['src'],
-        extensions: ['.js'],
-      },
-    },
-  },
-  globals: {
-    expect: true,
-    jest: true,
-    it: true,
-    describe: true,
-    __DEVELOPMENT__: true,
-    __CLIENT__: true,
-    __SERVER__: true,
-    __DISABLE_SSR__: true,
-    __DEVTOOLS__: true,
-    socket: true,
-    webpackIsomorphicTools: true,
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-unused-vars': ['error', { ignoreRestSiblings: true }],
   },
 };

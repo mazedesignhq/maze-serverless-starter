@@ -1,4 +1,4 @@
-service: order-testers
+service: hello-service
 
 provider:
   name: aws
@@ -32,30 +32,9 @@ functions:
   helloWorld:
     handler: src/handlers.helloWorld
 
-stepFunctions:
-  stateMachines:
-    orderTesters:
-      name: ${self:service}-${opt:stage}-stepFunctions-orderTesters
-      definition:
-        StartAt: createHIT
-        States:
-          createHIT:
-            Type: Task
-            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-createHIT
-            ResultPath: $.data
-            Next: createPanelOrder
-          createPanelOrder:
-            Type: Task
-            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-createPanelOrder
-            ResultPath: $.data
-            Next: debitCredits
-          debitCredits:
-            Type: Task
-            Resource: arn:aws:lambda:#{AWS::Region}:#{AWS::AccountId}:function:${self:service}-${opt:stage}-debitCredits
-            End: true
 
 plugins:
-  - serverless-webpack
+  - serverless-plugin-typescript
   - serverless-offline
   - serverless-plugin-warmup
   - serverless-dotenv-plugin
