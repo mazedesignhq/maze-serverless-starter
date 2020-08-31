@@ -54,7 +54,7 @@
     "tsconfig-paths": "^3.9.0"
   },
   "dependencies": {
-    "@mazeapp/maze-api-core": "^0.1.69",
+    "@mazeapp/maze-api-core": "^0.2.246",
     "@types/aws-lambda": "^8.10.60",
     "@types/node": "^12.7.5",
     "debug": "^4.1.1",
