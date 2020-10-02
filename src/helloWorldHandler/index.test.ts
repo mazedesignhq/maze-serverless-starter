@@ -7,14 +7,7 @@ const mockedCore = {
   utils: {
     log: (message: string): void => console.log(message),
   },
-  models: {
-    User: {
-      get: ({ userId }: { userId: number }) => ({
-        id: userId,
-        email: 'user@example.com',
-      }),
-    },
-  },
+  models: {},
 };
 
 const mockedEvent = {
